@@ -56,7 +56,7 @@ class ErrorBoundary extends React.Component {
 
 const App = () => {
   const [system, setSystem] = React.useState({});
-  function setApp2() {
+  function setRemote1() {
     setSystem({
       url: "http://localhost:3001",
       scope: "remote",
@@ -64,19 +64,39 @@ const App = () => {
     });
   }
 
-  function setApp3() {
+  function setRemote2() {
     setSystem({
-      url: "http://localhost:3003",
-      scope: "app3",
+      url: "http://localhost:3002",
+      scope: "remote2",
       module: "./Widget",
     });
   }
   return (
     <div className="mt-10 text-3xl mx-auto max-w-6xl">
-      <div>HOST</div>
-      <button onClick={setApp2}>Load App 2 Widget</button>
+      <h3>Host App</h3>
+      <button
+        style={{
+          border: "2px solid green",
+          margin: "5px",
+          borderRadius: "5px",
+        }}
+        className="mt-10 text-3xl mx-auto max-w-6xl"
+        onClick={setRemote1}
+      >
+        Load Remote 1
+      </button>
       <br></br>
-      <button onClick={setApp3}>Load App 3 Widget</button>
+      <button
+        style={{
+          border: "2px solid green",
+          margin: "5px",
+          borderRadius: "5px",
+        }}
+        className="mt-10 text-3xl mx-auto max-w-6xl"
+        onClick={setRemote2}
+      >
+        Load Remote 2
+      </button>
       <div style={{ marginTop: "2em" }}>
         <System system={system} />
       </div>
