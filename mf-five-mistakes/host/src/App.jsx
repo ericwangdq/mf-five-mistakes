@@ -55,7 +55,13 @@ class ErrorBoundary extends React.Component {
 }
 
 const App = () => {
-  const [system, setSystem] = React.useState({});
+  //by default load remote1 app
+  const [system, setSystem] = React.useState({
+    url: "http://localhost:3001",
+    scope: "remote",
+    module: "./Counter",
+  });
+
   function setRemote1() {
     setSystem({
       url: "http://localhost:3001",
